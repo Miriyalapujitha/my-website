@@ -29,14 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     try {
-      // ✅ SAVE TO BACKEND (Render API)
-      await fetch("https://your-render-url.onrender.com/api/orders", {
+      // ✅ SAVE TO BACKEND (YOUR DOMAIN)
+      const res = await fetch("https://krishnacateringservices.in/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
       });
+
+      // ❗ Check if request successful
+      if (!res.ok) {
+        throw new Error("Failed to save order");
+      }
 
       // ===== WHATSAPP MESSAGE =====
       const text = 
