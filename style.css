@@ -18,36 +18,38 @@ a {
 }
 
 /* ===== NAVBAR ===== */
-nav {
+.nav-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 60px; /* more breathing space */
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-nav img {
-  margin-left: 5px;
+  gap: 20px;
 }
 
-nav img {
-  height: 50px;   /* slightly smaller = cleaner */
-  width: auto;
-  object-fit: contain;
-}
+/* MOBILE NAV */
+@media (max-width: 768px) {
 
-.nav-links a {
-  margin-left: 25px;
-  font-weight: 600;
-  color: #333;
-  transition: 0.3s;
-}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
 
-.nav-links a:hover {
-  color: #FF6B00;
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 .menu-toggle {
