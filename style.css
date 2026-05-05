@@ -18,22 +18,68 @@ a {
 }
 
 /* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* LOGO FIX */
+nav img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* NAV LINKS (DESKTOP) */
 .nav-links {
   display: flex;
   gap: 20px;
 }
 
-/* MOBILE NAV */
+.nav-links a {
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FF6B00;
+}
+
+/* MENU ICON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
+
+  nav img {
+    height: 45px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #fff;
     position: absolute;
     top: 60px;
     right: 0;
     width: 100%;
+    background: #fff;
     text-align: center;
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -46,17 +92,8 @@ a {
   .nav-links.active {
     display: flex;
   }
-
-  .menu-toggle {
-    display: block;
-  }
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
 
 /* ===== HERO ===== */
 .hero-overlay {
