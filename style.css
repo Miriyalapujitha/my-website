@@ -91,6 +91,9 @@ nav img {
   .nav-links.active { 
     display: flex; 
   } 
+  .hero-overlay {
+    background-size: cover;
+  }
 } 
 
 /* ===== HERO ===== */ 
@@ -356,9 +359,7 @@ footer {
     height: 250px; 
   } 
 
-  .nav-links { 
-    display: none; 
-  } 
+  
 } 
 
 /* ===== CONTACT SECTION ===== */ 
