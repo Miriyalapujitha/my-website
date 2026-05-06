@@ -97,3 +97,9 @@ function openModal(imgSrc) {
 function closeModal() {
   document.getElementById("menuModal").style.display = "none";
 }
+// ===== ADD THIS AT VERY END =====
+document.getElementById("menuModal").addEventListener("click", function (e) {
+  if (e.target.id === "menuModal") {
+    closeModal();
+  }
+});
