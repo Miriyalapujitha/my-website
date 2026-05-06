@@ -33,13 +33,13 @@ nav {
 nav img {
   height: 50px;
   width: auto;
+  object-fit: contain;
 }
 
-/* NAV LINKS */
 .nav-links {
   display: flex;
   gap: 20px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .nav-links a {
@@ -51,7 +51,6 @@ nav img {
   color: #FF6B00;
 }
 
-/* MENU ICON */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -62,8 +61,10 @@ nav img {
 .hero-overlay {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
   url('./images/hero.png') center/cover no-repeat;
-
+  
   height: 90vh;
+  background-size: 110%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,9 +74,20 @@ nav img {
   padding: 0 20px;
 }
 
-.hero-overlay h1 { font-size: 44px; }
-.hero-overlay h2 { font-size: 22px; }
-.hero-overlay p { font-size: 18px; margin: 15px 0; }
+.hero-overlay h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.hero-overlay h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
 
 /* ===== BUTTON ===== */
 .btn-cta {
@@ -84,6 +96,11 @@ nav img {
   padding: 12px 25px;
   border-radius: 6px;
   font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-cta:hover {
+  background-color: #e65a00;
 }
 
 /* ===== SECTION ===== */
@@ -95,7 +112,7 @@ section {
 
 section h2 {
   font-size: 32px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
   color: #FF6B00;
 }
@@ -109,9 +126,10 @@ section p {
 /* ===== TRUST ===== */
 #trust {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
+  margin: 60px auto;
 }
 
 .trust-card {
@@ -120,13 +138,14 @@ section p {
   padding: 25px;
   border-radius: 10px;
   text-align: center;
+  font-weight: 600;
 }
 
 /* ===== SERVICES ===== */
 .services {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -134,25 +153,28 @@ section p {
   flex: 0 0 250px;
   height: 180px;
   background: #fff8f0;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
 }
 
 /* ===== MENU ===== */
 .menu-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
 .menu-box {
   flex: 0 0 300px;
+  height: 420px;
   background: #fff8f0;
-  padding: 20px;
   border-radius: 12px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -179,9 +201,9 @@ section p {
 /* ===== VIDEO ===== */
 .video-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .video-container video {
@@ -215,14 +237,12 @@ form {
   color: white;
 }
 
-/* ========================= */
-/* 🔥 MOBILE OPTIMIZATION 🔥 */
-/* ========================= */
-
+/* ===== MOBILE FIXES (ONLY IMPROVEMENTS) ===== */
 @media (max-width: 768px) {
 
-  /* NAVBAR */
-  .menu-toggle { display: block; }
+  .menu-toggle {
+    display: block;
+  }
 
   .nav-links {
     display: none;
@@ -235,19 +255,22 @@ form {
     text-align: center;
   }
 
-  .nav-links.active { display: flex; }
+  .nav-links.active {
+    display: flex;
+  }
 
-  /* HERO */
+  /* HERO FIX */
   .hero-overlay {
     height: 75vh;
     padding: 20px;
+    background-size: cover;
   }
 
   .hero-overlay h1 { font-size: 26px; }
   .hero-overlay h2 { font-size: 16px; }
   .hero-overlay p { font-size: 14px; }
 
-  /* SECTIONS */
+  /* SECTION SPACING */
   section {
     padding: 40px 15px;
   }
@@ -256,11 +279,12 @@ form {
     font-size: 24px;
   }
 
-  /* CARDS FULL WIDTH */
+  /* FULL WIDTH CARDS */
   .services .card,
   .trust-card,
   .menu-box {
     width: 100%;
+    height: auto;
   }
 
   /* GALLERY */
