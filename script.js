@@ -85,3 +85,15 @@ Details: ${data.message}`;
   });
 
 });
+
+function openModal(imgSrc) {
+  const modal = document.getElementById("menuModal");
+  const modalImg = document.getElementById("modalImg");
+
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+
+function closeModal() {
+  document.getElementById("menuModal").style.display = "none";
+}
