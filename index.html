@@ -89,15 +89,15 @@ We specialize in wedding catering, birthday parties, corporate events, and outdo
 <section id="menu">
   <h2>Our Menu</h2>
   <div class="menu-container">
-    <div class="menu-box">
-      <h3>Veg Menu</h3>
-      <img src="images/veg-menu.jpeg" alt="Veg Menu">
-    </div>
+    <div class="menu-box" onclick="openModal('images/veg-menu.jpeg')">
+  <h3>Veg Menu</h3>
+  <img src="images/veg-menu.jpeg" alt="Veg Menu">
+</div>
 
-    <div class="menu-box">
-      <h3>Non-Veg Menu</h3>
-      <img src="images/non-veg-menu.jpeg" alt="Non Veg Menu">
-    </div>
+<div class="menu-box" onclick="openModal('images/non-veg-menu.jpeg')">
+  <h3>Non-Veg Menu</h3>
+  <img src="images/non-veg-menu.jpeg" alt="Non Veg Menu">
+</div>
   </div>
 </section>
 
@@ -203,5 +203,10 @@ We specialize in wedding catering, birthday parties, corporate events, and outdo
 <!-- JS -->
 <script src="./script.js"></script>
 
+  <!-- MENU POPUP MODAL -->
+<div id="menuModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 </body>
 </html>
